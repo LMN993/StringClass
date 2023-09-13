@@ -212,8 +212,7 @@ MyString operator+ (const MyString& left, const MyString& right) {
 MyString operator+(const MyString& left, const char* right) {
 	return left + MyString(right);
 }
-MyString operator+(const MyString& left, const string right)
-{
+MyString operator+(const MyString& left, const string right) {
 	return left + MyString(right);
 }
 MyString& MyString::operator += (const MyString& str) {
@@ -222,13 +221,11 @@ MyString& MyString::operator += (const MyString& str) {
 	return *this;
 }
 MyString& MyString::operator += (const char* s) {
-	append(s);
-	return *this;
+	return *this += MyString(s);
 }
 
 MyString& MyString::operator+=(const string s) {
-	append(s);
-	return *this;
+	return *this += MyString(s);
 }
 const char& MyString::operator [] (size_t i) const {
 	return *(m_array + i);
